@@ -38,10 +38,12 @@ Scenario('Deschiderea paginii de confidențialitate', ({ I }) => {
     I.amOnPage('/pcgarage-tv/');
     I.click('confidentialitate');
     I.amOnPage('/info/prima-vizita/respectarea-confidentialitatii/?ref=cf-newsletter');
+    I.saveScreenshot('Deschiderea paginii de confidențialitate.png', false);
 });
 
 Scenario('Deschiderea paginii de Politică de confidențialitate', ({ I }) => {
     I.amOnPage('/pcgarage-tv/');
     I.click('Politicii de Confidentialitate');
     I.amOnPage('/info/prima-vizita/general-data-protection-regulation/');
+    I.saveScreenshot('Deschiderea paginii de Politică de confidențialitate.png', false);
 });

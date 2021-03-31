@@ -47,3 +47,15 @@ Scenario('Deschiderea paginii de Politică de confidențialitate', ({ I }) => {
     I.amOnPage('/info/prima-vizita/general-data-protection-regulation/');
     I.saveScreenshot('Deschiderea paginii de Politică de confidențialitate.png', false);
 });
+
+Scenario('Aparitia erorilor pe input-urile obligatorii', ({ I }) => {
+    I.amOnPage('/pcgarage-tv/');
+    I.fillField('Email:*','miles@');
+    I.fillField('Nume:*','');
+    I.fillField('Telefon:*','07');
+    I.pressKey('Enter');
+
+    I.seeElement('label#cformname-error');
+    I.seeElement('label#cformemail-error');
+    I.seeElement('label#cformtelephone-error');
+});
